@@ -35,16 +35,15 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.8">
+            android:layout_weight="0.7">
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/text_input_description"
                 android:layout_width="fill_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:theme="@style/TextLabel"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:layout_weight="0.5"
                 android:layout_marginTop="10dp">
 
                 <android.support.v7.widget.AppCompatEditText
@@ -57,22 +56,33 @@
             </android.support.design.widget.TextInputLayout>
 
 
-            <TextView
+            <AutoCompleteTextView
+                android:id="@+id/autocomplete_places"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:hint="Enter place name or address"
+                android:singleLine="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp" />
+
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Search Address below"
-                android:id="@+id/textView"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="5dp"
-                android:textColor="@android:color/black" />
+                android:layout_gravity="right"
+                android:src="@drawable/powered_by_google_light"
+                android:layout_marginRight="10dp" />
 
-            <fragment
-                android:id="@+id/place_autocomplete_fragment"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
-                android:layout_weight="0.6" />
+            <TextView
+                android:id="@+id/place_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="all"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp" />
+
 
         </LinearLayout>
 
@@ -83,7 +93,7 @@
             tools:context=".SetReminder"
             android:layout_margin="5dp"
             android:id="@+id/mapFragment"
-            android:layout_weight="0.2">
+            android:layout_weight="0.3">
 
 
         </fragment>
